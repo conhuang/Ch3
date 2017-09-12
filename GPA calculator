@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Main{
+  public static void main (String [] args)
+  {
+    Scanner scan = new Scanner (System.in);
+    System.out.print("Enter your grade (Q to quit): ");
+    String grade = scan.nextLine();
+    
+    grade = grade.toUpperCase();
+    int numA=0,numB=0,numC=0,numD=0, numF=0, numG=0;
+    
+    while (!grade.equals ("Q"))
+    {
+      if (grade.equals ("A")){
+        System.out.println ("Excellent");
+        numA++;
+        numG++;
+      }else if (grade.equals ("B")){
+        System.out.println ("Good");
+        numB++;
+        numG++;
+      }else if (grade.equals ("C") || grade.equals ("D")){
+        System.out.println ("fair.");
+          if (grade.equals ("C")){
+          numC++;
+          numG++;
+          }else{ 
+          numD++;
+          numG++;
+         }
+      }else if (grade.equals ("F")){
+        System.out.println ("Failure");
+        numF++;
+        numG++;
+      }else{
+        System.out.print ("invalid grade. ");
+      }
+        System.out.print("Enter your grade (Q to quit): ");
+         grade = scan.nextLine();
+        grade= grade.toUpperCase();
+    } 
+      System.out.println ("Done.");
+      double GPA = (numA*4.0 + numB*3.0 + 2.0*numC + 1.0*numD + 0*numF)/numG;
+      System.out.println ("GPA: " + GPA);
+    
+  }
+}
