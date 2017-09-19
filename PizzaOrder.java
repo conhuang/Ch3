@@ -98,21 +98,46 @@ public class PizzaOrder
             numberOfToppings += 1;
             toppings = toppings + "Pepperoni ";
         }
+        System.out.print("Do you want Sausage?  (Y/N):  ");
+        input = scan.next();
+        choice = input.charAt(0);
+        if (choice == 'Y' || choice == 'y')
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Sausage ";
+        }
 
-        //prompt user for Sausage, Onion and Mushroom choices
-
+        System.out.print("Do you want Onion?  (Y/N):  ");
+        input = scan.next();
+        choice = input.charAt(0);
+        if (choice == 'Y' || choice == 'y')
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Onion ";
+        }//prompt user for Sausage, Onion and Mushroom choices
+        System.out.print("Do you want Mushroom?  (Y/N):  ");
+        input = scan.next();
+        choice = input.charAt(0);
+        if (choice == 'Y' || choice == 'y')
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Mushroom ";
+        }
         //add additional toppings cost to cost of pizza
         cost = cost + (1.25*numberOfToppings);
 
         //display order confirmation
         System.out.println();
         System.out.println("Your order is as follows: ");
-        System.out.println(inches + " inch pizza");
+        if (inches == 10 || inches ==12||inches ==14 || inches==16)
+            System.out.println(inches + " inch pizza");
+        else
+            System.out.println("12 inch pizza");
         System.out.println(crust + " crust");
         System.out.println(toppings);
 
-        //apply discount if user is elibible
-        if (discount = true)
+        
+        if (discount == true)
         {
             System.out.println ("\nCongratulations! Because your name is " + firstName +
                                 ", you are eligible for a " +"$2.00 discount.\n");
