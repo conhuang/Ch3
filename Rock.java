@@ -20,21 +20,16 @@ public class Rock
         System.out.print("\fPlay Rock, Paper, Scissors!\n"+
                         "Enter your play (\"R\" for Rock, \"P\" for paper, and \"S\" for scissors): ");
         personPlay = scan.nextLine();
-        personPlay = personPlay.toUpperCase();//Make player's play uppercase for ease of comparison
-
-        computerInt = (int) (Math.random()*3);//Generate computer's play (0,1,2). Use the Math.random() method
-
-        //Translate computer's randomly generated play to string
-        if (computerInt == 0)
-            computerPlay = "R";
-        else if (computerInt == 1)
-            computerPlay = "P";
-        else
-            computerPlay = "S";
-
-      
+        personPlay = personPlay.toUpperCase();
 
         while (!personPlay.equals("Q")){
+           computerInt = (int) (Math.random()*3);
+           if (computerInt == 0)
+                computerPlay = "R";
+           else if (computerInt == 1)
+                computerPlay = "P";
+           else
+                computerPlay = "S";
              
             if (personPlay.equals(computerPlay))  {
                 System.out.println ("Computer play: " + computerPlay);
@@ -75,7 +70,7 @@ public class Rock
                 personPlay = personPlay.toUpperCase();
             }
            
+        }
+        System.out.println ("Thanks for playing!");
     }
-    System.out.println ("Thanks for playing!");
-}
 }
